@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hashim | Programmer Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <button id="theme-toggle" aria-label="Toggle dark/light mode" class="theme-toggle-fixed">🌙</button>
+    <button id="lang-toggle" aria-label="Toggle language" class="lang-toggle-fixed">🇸🇦</button>
+    
+    <header class="site-header">
+        <img src="assets/Screenshot 2025-08-06 161246.png" alt="Hashim Logo" class="site-logo">
+        <div class="site-title-group">
+            <span class="site-title" data-en="Hashim" data-ar="هاشم">Hashim</span>
+            <span class="site-subtitle" data-en="Frontend Web Developer & Django Developer" data-ar="مطور واجهات أمامية و مطور جانغو">Frontend Web Developer & Django Developer</span>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="hero" class="hero-section">
+            <div class="decorative-bg"></div>
+            <div class="hero-content fade-in">
+                <h1 data-en="Hi, I'm Hashim,from " data-ar=" مرحباً، أنا هاشم ">Hi, I'm Hashim <span class="emoji">👨‍💻</span></h1>
+                <p data-en="Creative Frontend Developer & Django Developer" data-ar="في بداية رحلتي في عالم البرمجة ,مطور ويب وبوتات تليجرام">Creative Frontend Developer & Django Developer</p>
+            </div>
+        </section>
+
+        <div id="three-brackets"></div>
+        <div id="three-brackets-right"></div>
+
+        <!-- ✅ قسم الخبرات مع الأيقونات -->
+        <section id="experience" class="experience-section fade-in">
+            <h2 data-en="Experience" data-ar="الخبرات">
+                <img src="assets/code.svg" class="section-icon" alt="Code"> Experience
+            </h2>
+            <div class="experience-grid">
+                <div class="experience-card web-dev">
+                    <div class="experience-icon-wrapper">
+                        <span class="material-icons web-icon">language</span>
+                    </div>
+                    <div class="experience-content">
+                        <h3 data-en="Web Development" data-ar="تطوير المواقع">Web Development</h3>
+                        <p data-en="HTML, CSS" data-ar="HTML, CSS">HTML, CSS</p>
+                        <div class="experience-level">
+                            <span class="level-label" data-en="Mastery Level:" data-ar="نسبة الإتقان:">نسبة الإتقان:</span>
+                            <div class="level-bar">
+                                <div class="level-fill" style="width: 90%"></div>
+                            </div>
+                            <span class="level-text">90%</span>
+                        </div>
+                        <p class="progress-note" data-en="Progress continues!" data-ar="التقدم مستمر!">التقدم مستمر!</p>
+                    </div>
+                </div>
+
+                <div class="experience-card django">
+                    <div class="experience-icon-wrapper">
+                        <span class="material-icons django-icon">code</span>
+                    </div>
+                    <div class="experience-content">
+                        <h3 data-en="Django Framework" data-ar="إطار عمل جانغو">Django Framework</h3>
+                        <p data-en="Python Web Development" data-ar="تطوير ويب بلغة بايثون">Python Web Development</p>
+                        <div class="experience-level">
+                            <span class="level-label" data-en="Mastery Level:" data-ar="نسبة الإتقان:">نسبة الإتقان:</span>
+                            <div class="level-bar">
+                                <div class="level-fill" style="width: 50%"></div>
+                            </div>
+                            <span class="level-text">50%</span>
+                        </div>
+                        <p class="progress-note" data-en="Progress continues!" data-ar="التقدم مستمر!">التقدم مستمر!</p>
+                    </div>
+                </div>
+
+                <div class="experience-card database">
+                    <div class="experience-icon-wrapper">
+                        <img src="assets/sql.svg" alt="Database" class="experience-logo">
+                    </div>
+                    <div class="experience-content">
+                        <h3 data-en="Database Management" data-ar="إدارة قواعد البيانات">Database Management</h3>
+                        <p data-en="SQL, Database Design" data-ar="SQL, تصميم قواعد البيانات">SQL, Database Design</p>
+                        <div class="experience-level">
+                            <span class="level-label" data-en="Mastery Level:" data-ar="نسبة الإتقان:">نسبة الإتقان:</span>
+                            <div class="level-bar">
+                                <div class="level-fill" style="width: 70%"></div>
+                            </div>
+                            <span class="level-text">70%</span>
+                        </div>
+                        <p class="progress-note" data-en="Progress continues!" data-ar="التقدم مستمر!">التقدم مستمر!</p>
+                    </div>
+                </div>
+
+                <div class="experience-card telegram">
+                    <div class="experience-icon-wrapper">
+                        <img src="assets/telegram.svg" alt="Telegram Bot" class="experience-logo">
+                    </div>
+                    <div class="experience-content">
+                        <h3 data-en="Telegram Bot Development" data-ar="تطوير بوتات تيليجرام">Telegram Bot Development</h3>
+                        <p data-en="Python, Telegram API" data-ar="بايثون، واجهة برمجة تيليجرام">Python, Telegram API</p>
+                        <div class="experience-level">
+                            <span class="level-label" data-en="Mastery Level:" data-ar="نسبة الإتقان:">نسبة الإتقان:</span>
+                            <div class="level-bar">
+                                <div class="level-fill" style="width: 80%"></div>
+                            </div>
+                            <span class="level-text">80%</span>
+                        </div>
+                        <p class="progress-note" data-en="Progress continues!" data-ar="التقدم مستمر!">التقدم مستمر!</p>
+                    </div>
+                </div>
+
+                <div class="experience-card python">
+                    <div class="experience-icon-wrapper">
+                        <span class="material-icons python-icon">code</span>
+                    </div>
+                    <div class="experience-content">
+                        <h3 data-en="Python Scripting" data-ar="كتابة سكربتات بايثون">Python Scripting</h3>
+                        <p data-en="Automation, Data Processing" data-ar="أتمتة، معالجة البيانات">Automation, Data Processing</p>
+                        <div class="experience-level">
+                            <span class="level-label" data-en="Mastery Level:" data-ar="نسبة الإتقان:">نسبة الإتقان:</span>
+                            <div class="level-bar">
+                                <div class="level-fill" style="width: 85%"></div>
+                            </div>
+                            <span class="level-text">85%</span>
+                        </div>
+                        <p class="progress-note" data-en="Progress continues!" data-ar="التقدم مستمر!">التقدم مستمر!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects-section fade-in">
+            <h2 data-en="Projects" data-ar="المشاريع"><img src="assets/project.svg" class="section-icon" alt="Projects"> Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3 data-en="Personal Portfolio" data-ar="موقعي الشخصي">Personal Portfolio</h3>
+                    <p data-en="Modern responsive portfolio website with 3D elements" data-ar="موقع شخصي عصري متجاوب مع عناصر ثلاثية الأبعاد">Modern responsive portfolio website with 3D elements</p>
+                    <div class="project-tags">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3 data-en="Django Web Application" data-ar="تطبيق ويب جانغو">Django Web Application</h3>
+                    <p data-en="Full-stack web application built with Django framework" data-ar="تطبيق ويب متكامل باستخدام جانغو">Full-stack web application built with Django framework</p>
+                    <div class="project-tags">
+                        <span>Django</span>
+                        <span>Python</span>
+                        <span>SQL</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3 data-en="Telegram Bot" data-ar="بوت تيليجرام">Telegram Bot</h3>
+                    <p data-en="Automated Telegram bot for various functionalities" data-ar="بوت تيليجرام آلي لوظائف متعددة">Automated Telegram bot for various functionalities</p>
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>Telegram API</span>
+                        <span>Automation</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section fade-in">
+            <h2 data-en="Contact" data-ar="التواصل"><img src="assets/contact.svg" class="section-icon" alt="Contact"> Contact</h2>
+            <div class="contact-icons">
+                <a href="https://github.com/hashimebaid" target="_blank" aria-label="GitHub"><img src="assets/github.svg" alt="GitHub"></a>
+                <a href="https://wa.me/96898036960" target="_blank" aria-label="WhatsApp"><img src="assets/whatsapp.svg" alt="WhatsApp"></a>
+                <a href="https://www.instagram.com/h_ash.im?igsh=Nm1pbDZubHVpdHM0" target="_blank" aria-label="Instagram"><img src="assets/instagram.svg" alt="Instagram"></a>
+                <a href="mailto:hbk34j@hotmail.com" aria-label="Email"><img src="assets/email.svg" alt="Email"></a>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="js/three-brackets.js"></script>
+    <script src="js/theme-toggle.js"></script>
+    <script src="js/scroll-animate.js"></script>
+    <script src="js/lang-toggle.js"></script>
+</body>
+</html>

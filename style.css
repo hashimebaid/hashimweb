@@ -1,0 +1,803 @@
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Cairo', 'Tajawal', Arial, sans-serif;
+    background: #e6ecf5;
+    color: #222b3a;
+    margin: 0;
+    direction: ltr;
+    transition: background 0.3s, color 0.3s;
+}
+body[dir="rtl"] {
+    font-family: 'Tajawal', 'Cairo', Arial, sans-serif;
+}
+body.dark-mode {
+    background: #1a2233;
+    color: #e6ecf5;
+}
+#theme-toggle {
+    position: fixed;
+    top: 1.2em;
+    left: 1.2em;
+    background: #4a6fa5;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    font-size: 1.5em;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: background 0.3s;
+}
+#theme-toggle:hover {
+    background: #35507a;
+}
+.theme-toggle-fixed {
+    position: fixed;
+    top: 1.2em;
+    right: 1.2em;
+    left: unset;
+    z-index: 1100;
+}
+.lang-toggle-fixed {
+    position: fixed;
+    top: 1.2em;
+    right: 4.5em;
+    z-index: 1100;
+    background: #4a6fa5;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    font-size: 1.5em;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: background 0.3s;
+}
+.lang-toggle-fixed:hover {
+    background: #35507a;
+}
+nav {
+    background: #222b3a;
+    padding: 0.7em 0;
+    box-shadow: 0 2px 8px rgba(34,43,58,0.07);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    gap: 2em;
+}
+nav ul li a {
+    color: #e6ecf5;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+nav ul li a:hover {
+    color: #4a6fa5;
+}
+.site-header {
+    display: flex;
+    align-items: center;
+    gap: 1.2em;
+    padding: 1.2em 2em 0.5em 2em;
+    background: transparent;
+    justify-content: center;
+}
+.site-logo {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(74,111,165,0.12);
+}
+.site-title-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.site-title {
+    font-size: 2em;
+    font-weight: bold;
+    color: #35507a;
+    letter-spacing: 2px;
+}
+.site-subtitle {
+    font-size: 1.1em;
+    color: #4a6fa5;
+    margin-top: 0.2em;
+    font-weight: 500;
+}
+body.dark-mode .site-title {
+    color: #7ea7e0;
+}
+body.dark-mode .site-subtitle {
+    color: #b3c6e0;
+}
+#three-brackets {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 120px;
+    height: 320px;
+    z-index: 900;
+    opacity: 0.18;
+    pointer-events: none;
+}
+#three-brackets-right {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 120px;
+    height: 320px;
+    z-index: 900;
+    opacity: 0.18;
+    pointer-events: none;
+}
+@media (max-width: 700px) {
+    #three-brackets, #three-brackets-right {
+        display: none;
+    }
+    .site-header {
+        flex-direction: column;
+        gap: 0.5em;
+    }
+}
+.decorative-bg {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: radial-gradient(circle at 80% 20%, #b3c6e0 0%, transparent 60%),
+                radial-gradient(circle at 20% 80%, #4a6fa5 0%, transparent 70%);
+    opacity: 0.18;
+}
+.hero-section {
+    position: relative;
+    overflow: hidden;
+}
+.emoji {
+    font-size: 1.1em;
+}
+.section-icon {
+    width: 32px;
+    height: 32px;
+    vertical-align: middle;
+    margin-right: 0.5em;
+}
+.exp-icon {
+    width: 22px;
+    height: 22px;
+    vertical-align: middle;
+    margin-right: 0.5em;
+}
+.hero-content {
+    flex: 1 1 300px;
+    text-align: left;
+}
+.hero-content h1 {
+    font-size: 2.8em;
+    margin-bottom: 0.3em;
+    color: #35507a;
+}
+body.dark-mode .hero-content h1 {
+    color: #7ea7e0;
+}
+.hero-content p {
+    font-size: 1.3em;
+    color: #4a6fa5;
+}
+body.dark-mode .hero-content p {
+    color: #b3c6e0;
+}
+#three-container {
+    flex: 1 1 300px;
+    min-width: 300px;
+    height: 260px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.experience-section, .contact-section {
+    max-width: 700px;
+    margin: 3em auto 0 auto;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 2px 12px rgba(74,111,165,0.07);
+    padding: 2em;
+    transition: background 0.3s, color 0.3s;
+}
+body.dark-mode .experience-section, body.dark-mode .contact-section {
+    background: #222b3a;
+    color: #e6ecf5;
+}
+.experience-section h2, .contact-section h2 {
+    color: #35507a;
+    margin-top: 0;
+}
+body.dark-mode .experience-section h2, body.dark-mode .contact-section h2 {
+    color: #7ea7e0;
+}
+.experience-section ul {
+    padding: 0 1em;
+}
+.experience-section li {
+    margin-bottom: 1em;
+    font-size: 1.1em;
+}
+.contact-icons {
+    display: flex;
+    gap: 2em;
+    justify-content: center;
+    margin-top: 1.5em;
+}
+.contact-icons a {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    background: #e6ecf5;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(74,111,165,0.07);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, box-shadow 0.2s;
+}
+.contact-icons a:hover {
+    background: #4a6fa5;
+    box-shadow: 0 4px 16px rgba(74,111,165,0.15);
+}
+.contact-icons img {
+    width: 28px;
+    height: 28px;
+    filter: grayscale(0.2);
+}
+::-webkit-scrollbar {
+    width: 10px;
+    background: #e6ecf5;
+}
+::-webkit-scrollbar-thumb {
+    background: #b3c6e0;
+    border-radius: 5px;
+}
+body.dark-mode ::-webkit-scrollbar {
+    background: #222b3a;
+}
+body.dark-mode ::-webkit-scrollbar-thumb {
+    background: #35507a;
+}
+.contact-icons a {
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.contact-icons a:hover {
+    transform: scale(1.15) rotate(-6deg);
+    box-shadow: 0 6px 24px rgba(74,111,165,0.18);
+}
+.fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s, transform 0.7s;
+}
+.fade-in.visible {
+    opacity: 1;
+    transform: none;
+}
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5em;
+    margin-top: 1.5em;
+}
+.project-card {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 1.5em;
+    box-shadow: 0 2px 8px rgba(74,111,165,0.07);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+body.dark-mode .project-card {
+    background: #2a3955;
+}
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 16px rgba(74,111,165,0.12);
+}
+.project-card h3 {
+    color: #35507a;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+}
+body.dark-mode .project-card h3 {
+    color: #7ea7e0;
+}
+.project-tags {
+    display: flex;
+    gap: 0.5em;
+    margin-top: 1em;
+    flex-wrap: wrap;
+}
+.project-tags span {
+    background: #4a6fa5;
+    color: #fff;
+    padding: 0.3em 0.8em;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 500;
+}
+
+/* تصميمات قسم الخبرات الجديد */
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5em;
+    margin-top: 2em;
+}
+
+.experience-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 20px;
+    padding: 1.8em;
+    box-shadow: 0 4px 20px rgba(74,111,165,0.08);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.experience-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #4a6fa5, #7ea7e0);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.experience-card:hover::before {
+    transform: scaleX(1);
+}
+
+.experience-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 30px rgba(74,111,165,0.15);
+    border-color: rgba(74,111,165,0.1);
+}
+
+/* ألوان خاصة لكل خبرة */
+.experience-card.web-dev {
+    background: linear-gradient(135deg, #ffffff 0%, #fff5f5 100%);
+}
+
+.experience-card.web-dev .experience-icon-wrapper {
+    background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+}
+
+.experience-card.django {
+    background: linear-gradient(135deg, #ffffff 0%, #f0f8ff 100%);
+}
+
+.experience-card.django .experience-icon-wrapper {
+    background: linear-gradient(135deg, #092e20, #0d4a2c);
+}
+
+.experience-card.database {
+    background: linear-gradient(135deg, #ffffff 0%, #f0fff0 100%);
+}
+
+.experience-card.database .experience-icon-wrapper {
+    background: linear-gradient(135deg, #0066cc, #4da6ff);
+}
+
+.experience-card.telegram {
+    background: linear-gradient(135deg, #ffffff 0%, #f0f8ff 100%);
+}
+
+.experience-card.telegram .experience-icon-wrapper {
+    background: linear-gradient(135deg, #0088cc, #00a8ff);
+}
+
+.experience-card.python {
+    background: linear-gradient(135deg, #ffffff 0%, #fff8e1 100%);
+}
+
+.experience-card.python .experience-icon-wrapper {
+    background: linear-gradient(135deg, #3776AB, #FFD43B);
+}
+
+/* تصميم الأيقونة */
+.experience-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.2em;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.experience-card:hover .experience-icon-wrapper {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.experience-logo {
+    width: 32px;
+    height: 32px;
+    filter: brightness(0) invert(1);
+    transition: all 0.3s ease;
+}
+
+/* محتوى الخبرة */
+.experience-content h3 {
+    color: #35507a;
+    margin: 0 0 0.5em 0;
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
+.experience-content p {
+    color: #4a6fa5;
+    margin: 0 0 1.2em 0;
+    font-size: 0.95em;
+    font-weight: 500;
+}
+
+/* شريط مستوى الخبرة */
+.experience-level {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.level-label {
+    color: #35507a;
+    font-weight: 600;
+    font-size: 0.9em;
+    min-width: 80px;
+    white-space: nowrap;
+}
+
+.level-bar {
+    flex: 1;
+    height: 8px;
+    background: #e6ecf5;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+.level-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #4a6fa5, #7ea7e0);
+    border-radius: 4px;
+    transition: width 1s ease;
+    position: relative;
+}
+
+.level-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.level-text {
+    color: #35507a;
+    font-weight: 600;
+    font-size: 0.9em;
+    min-width: 35px;
+}
+
+/* تصميم نص التقدم المستمر */
+.progress-note {
+    color: #4a6fa5;
+    font-size: 0.85em;
+    font-weight: 500;
+    margin: 0.5em 0 0 0;
+    font-style: italic;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.experience-card:hover .progress-note {
+    opacity: 1;
+    color: #35507a;
+}
+
+/* الوضع المظلم */
+body.dark-mode .experience-card {
+    background: linear-gradient(135deg, #2a3955 0%, #1a2233 100%);
+    border-color: rgba(126,167,224,0.1);
+}
+
+body.dark-mode .experience-card.web-dev {
+    background: linear-gradient(135deg, #2a3955 0%, #2a1a1a 100%);
+}
+
+body.dark-mode .experience-card.django {
+    background: linear-gradient(135deg, #2a3955 0%, #1a2a33 100%);
+}
+
+body.dark-mode .experience-card.database {
+    background: linear-gradient(135deg, #2a3955 0%, #1a332a 100%);
+}
+
+body.dark-mode .experience-card.telegram {
+    background: linear-gradient(135deg, #2a3955 0%, #1a2233 100%);
+}
+
+body.dark-mode .experience-card.python {
+    background: linear-gradient(135deg, #2a3955 0%, #2a2a1a 100%);
+}
+
+body.dark-mode .experience-content h3 {
+    color: #7ea7e0;
+}
+
+body.dark-mode .experience-content p {
+    color: #b3c6e0;
+}
+
+body.dark-mode .level-bar {
+    background: #1a2233;
+}
+
+body.dark-mode .level-text {
+    color: #7ea7e0;
+}
+
+body.dark-mode .level-label {
+    color: #7ea7e0;
+}
+
+body.dark-mode .progress-note {
+    color: #b3c6e0;
+}
+
+body.dark-mode .experience-card:hover .progress-note {
+    color: #7ea7e0;
+}
+
+/* تحسينات إضافية لقسم الخبرات */
+.experience-card {
+    animation: slideInUp 0.6s ease forwards;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+@keyframes slideInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.experience-card.visible {
+    animation: slideInUp 0.6s ease forwards;
+}
+
+/* تأثيرات إضافية للأيقونات */
+.experience-icon-wrapper {
+    position: relative;
+}
+
+.experience-icon-wrapper::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+    border-radius: 18px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.experience-card:hover .experience-icon-wrapper::after {
+    opacity: 1;
+}
+
+/* تحسين شريط التقدم */
+.level-bar {
+    position: relative;
+    background: linear-gradient(90deg, #e6ecf5, #f0f4f8);
+}
+
+.level-fill {
+    position: relative;
+    background: linear-gradient(90deg, #4a6fa5, #7ea7e0, #4a6fa5);
+    background-size: 200% 100%;
+    animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+/* تأثيرات خاصة لكل خبرة */
+.experience-card.web-dev .level-fill {
+    background: linear-gradient(90deg, #ff6b6b, #ff8e8e, #ff6b6b);
+    background-size: 200% 100%;
+}
+
+.experience-card.django .level-fill {
+    background: linear-gradient(90deg, #092e20, #0d4a2c, #092e20);
+    background-size: 200% 100%;
+}
+
+.experience-card.database .level-fill {
+    background: linear-gradient(90deg, #0066cc, #4da6ff, #0066cc);
+    background-size: 200% 100%;
+}
+
+.experience-card.telegram .level-fill {
+    background: linear-gradient(90deg, #0088cc, #00a8ff, #0088cc);
+    background-size: 200% 100%;
+}
+
+.experience-card.python .level-fill {
+    background: linear-gradient(90deg, #3776AB, #FFD43B, #3776AB);
+    background-size: 200% 100%;
+}
+
+/* تحسين النصوص */
+.experience-content h3 {
+    position: relative;
+    display: inline-block;
+}
+
+.experience-content h3::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #4a6fa5, #7ea7e0);
+    transition: width 0.3s ease;
+}
+
+.experience-card:hover .experience-content h3::after {
+    width: 100%;
+}
+
+/* تأثيرات الوضع المظلم */
+body.dark-mode .level-bar {
+    background: linear-gradient(90deg, #1a2233, #2a3955);
+}
+
+body.dark-mode .level-fill {
+    background: linear-gradient(90deg, #7ea7e0, #b3c6e0, #7ea7e0);
+    background-size: 200% 100%;
+}
+
+/* تحسينات للشاشات الصغيرة */
+@media (max-width: 480px) {
+    .experience-grid {
+        gap: 1em;
+        margin-top: 1.5em;
+    }
+    
+    .experience-card {
+        padding: 1.2em;
+        border-radius: 16px;
+    }
+    
+    .experience-icon-wrapper {
+        width: 45px;
+        height: 45px;
+        margin-bottom: 1em;
+    }
+    
+    .experience-logo {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .python-icon {
+        font-size: 24px !important;
+    }
+    
+    .web-icon {
+        font-size: 24px !important;
+    }
+    
+    .django-icon {
+        font-size: 24px !important;
+    }
+    
+    .experience-content h3 {
+        font-size: 1.1em;
+    }
+    
+    .experience-content p {
+        font-size: 0.9em;
+    }
+    
+    .level-label {
+        font-size: 0.8em;
+        min-width: 70px;
+    }
+    
+    .experience-level {
+        gap: 0.8em;
+    }
+}
+
+/* تصميم أيقونة Python من Google Fonts */
+.python-icon {
+    font-size: 32px !important;
+    color: white !important;
+    filter: none !important;
+    transition: all 0.3s ease;
+}
+
+.experience-card:hover .python-icon {
+    transform: scale(1.1);
+}
+
+.experience-card.python .experience-icon-wrapper {
+    background: linear-gradient(135deg, #3776AB, #FFD43B);
+}
+
+/* تصميم أيقونة الويب من Google Fonts */
+.web-icon {
+    font-size: 32px !important;
+    color: white !important;
+    filter: none !important;
+    transition: all 0.3s ease;
+}
+
+.experience-card:hover .web-icon {
+    transform: scale(1.1);
+}
+
+.experience-card.web-dev .experience-icon-wrapper {
+    background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+}
+
+/* تصميم أيقونة Django من Google Fonts */
+.django-icon {
+    font-size: 32px !important;
+    color: white !important;
+    filter: none !important;
+    transition: all 0.3s ease;
+}
+
+.experience-card:hover .django-icon {
+    transform: scale(1.1);
+}
+
+.experience-card.django .experience-icon-wrapper {
+    background: linear-gradient(135deg, #092e20, #0d4a2c);
+}
+
+/* تحسينات إضافية لقسم الخبرات */
